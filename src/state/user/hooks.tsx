@@ -199,6 +199,8 @@ export function useTokenWarningDismissal(chainId?: number, token?: Currency): [b
  * @param tokenB the other token
  */
 export function toV2LiquidityToken([tokenA, tokenB]: [Token, Token]): Token {
+  console.log('Pair.getAddress(tokenA, tokenB)');
+  console.log(Pair.getAddress(tokenA, tokenB));
   return new Token(tokenA.chainId, Pair.getAddress(tokenA, tokenB), 18, 'UNI-V2', 'Uniswap V2')
 }
 
@@ -227,6 +229,7 @@ export function useTrackedTokenPairs(): [Token, Token][] {
                   if (base.address === token.address) {
                     return null
                   } else {
+                    console.log(chainId)
                     return [base, token]
                   }
                 })

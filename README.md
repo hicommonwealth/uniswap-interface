@@ -63,3 +63,10 @@ CI checks will run against all PRs.
 The Uniswap Interface supports swapping against, and migrating or removing liquidity from Uniswap V1. However,
 if you would like to use Uniswap V1, the Uniswap V1 interface for mainnet and testnets is accessible via IPFS gateways 
 linked from the [v1.0.0 release](https://github.com/Uniswap/uniswap-interface/releases/tag/v1.0.0).
+
+## Additional Constants to Change
+
+To correctly calculate the CREATE2 address for new pairs, you'll need to edit @uniswap/sdk for the following constants:
+
+- FACTORY_ADDRESS
+- INIT_CODE_HASH
